@@ -26,8 +26,8 @@ del(camera)
 
 time.sleep(12)
 
-fromaddr = "saponita9611@gmail.com"
-toaddr = "s_quesada96@hotmail.com"
+fromaddr = "Correo remitente/host"
+toaddr = "Correo destinatario"
 
 img_data = open("imagen.png",'rb').read()
 msg = MIMEMultipart()
@@ -47,7 +47,7 @@ server = smtplib. SMTP ('smtp.gmail.com',587)
 server.ehlo()
 server.starttls()
 server.ehlo()
-server.login (fromaddr,"isabela2320")
+server.login (fromaddr,"Contraseña del correo remitente/host")
 text1 = msg.as_string()
 server.sendmail(fromaddr,toaddr,text1)
 server.quit()
