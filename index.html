@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Sistema de vigilancia | Alarma de hogar </title>
+    <script type="text/javascript" src="/webiopi.js"></script>
+    <script type="text/javascript">
+    webiopi().ready(function() {
+	    var button = webiopi().createGPIOButton(18, "ENCENDIDO");
+	    var button1 = webiopi().createGPIOButton(20, "CERCANIA");
+	    var button2 = webiopi().createGPIOButton(16, "MOVIMIENTO");
+	    // Append button to HTML element with ID="controls" using jQuery
+	    $("#init").append(button);
+	    $("#close").append(button1);
+	    $("#door").append(button2);
+                webiopi().refreshGPIO(true);
+    });
+
+    </script>
+    <style type="text/css">
+		h1 {
+		    background-color: #A9A9A9;
+		    text-align: center;
+		    padding: 40px;
+		}
+        button {
+            display: block;
+            margin: 5px 5px 5px 5px;
+            width: 230px;
+            height: 45px;
+            font-size: 24pt;
+            font-weight: bold;
+            color: white;
+        }
+        #gpio18.LOW {
+            background-color: Black;
+        }
+        #gpio18.HIGH {
+            background-color: Red;
+        }
+        #gpio20.LOW {
+            background-color: Black;
+        }
+        #gpio20.HIGH {
+            background-color: Red;
+        }
+        #gpio16.LOW {
+            background-color: Black;
+        }
+        #gpio16.HIGH {
+            background-color: Red;
+        }
+    </style>
+</head>
+<body>
+	<body style="background-color:gray;">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<h1 style="text-align:center;">Alarma de vigilancia del hogar</h1> 
+	<div align="center">
+    <div id="init" align="center"></div>
+    <p></p>
+    <div id="close" align="center"></div>
+    <p></p>
+    <div id="door" align="center"></div>
+    <p></p> <br>
+    <p><strong>Explicación del funcionamiento del sistema</strong></p>
+    <p><strong>ENCENDIDO:</strong> Al mostrarse un indicador luminoso en esta opción, el usuario confirma que el sistema de alarma se encuentra activo (Botón clickeable por el usuario para armar el sistema).</p>
+    <p><strong>CERCANIA:</strong> Si se enciende el indicador, determina que una persona se acercó a la puerta de su casa. Al mostrarse este indicador, se envía un correo con la fotografía de la persona que se acercó a su puerta </p>
+    <p><strong>MOVIMIENTO:</strong> Al realizar un cambio de estado, se indica que la persona intentó abrir la puerta de su casa.</p>
+</body>
+</html>
