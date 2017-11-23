@@ -42,7 +42,7 @@ while(a):
         hh1 = "Fecha y hora: " + hora #se le agrega el mensaje de fecha y hora
         
 
-        fromaddr = "saponita9611@gmail.com" #correo que sirve de host
+        fromaddr = "correo del remitente/host" #correo que sirve de host
        
 
         img_data = open("imagen.png",'rb').read() #leer el archivo que se envia
@@ -65,7 +65,7 @@ while(a):
         #server.ehlo()
         server.starttls()
         #server.ehlo()
-        server.login (fromaddr,"isabela2320")#se entra al host
+        server.login (fromaddr,"Contraseña del correo remitente/host")#se entra al host
         text1 = msg.as_string() #el mensaje a enviar convierte a string para poder usarlo
         server.sendmail(fromaddr,toaddr,text1)#se crea el correo a enviar
         server.quit()#se sale del hosy
