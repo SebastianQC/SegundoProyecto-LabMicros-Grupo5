@@ -4,5 +4,5 @@
 
 cd /
 cd home/pi/ProyectoG5/
-sudo python sw401.py & sudo python intento.py
+sudo python sw401.py & sudo python intento.py #Se ejecutan los archivos python en paralelo: sw401: archivo de sensor de vibraciones; intento: archivo proyecto
 cd /
